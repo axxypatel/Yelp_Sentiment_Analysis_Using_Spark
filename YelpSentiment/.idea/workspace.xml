@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8cf1bbb8-1f40-4e0e-b2a8-3e557e743213" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Project" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Scala Worksheet" />
+        <option value="Scala Object" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1ZHTXTInlEKxFduOYPWZITylBbn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../YelpApp" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="batch" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\sem3\Scala\CSYE7200-master\Project\src\main\scala" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="yelpSentimentMain" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="main_package.yelpSentimentMain" />
+      <module name="Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main_package.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.yelpSentimentMain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="Project" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="project [file:/C:/Users/kahma/Documents/Project/]" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="Project-build" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="3170877671963" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="2059231627" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="1244562550" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../CSYE7200-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../CSYE7200-master/lab-99" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8cf1bbb8-1f40-4e0e-b2a8-3e557e743213" name="Default Changelist" comment="" />
+      <created>1584495058168</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584495058168</updated>
+      <workItem from="1586311168061" duration="62788000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="343" y="140" key="#Notifications" timestamp="1584495306502">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="343" y="140" key="#Notifications/0.0.1500.960@0.0.1500.960" timestamp="1584495306502" />
+    <state x="481" y="236" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1586234531528">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="481" y="236" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1500.960@0.0.1500.960" timestamp="1586234531528" />
+    <state x="518" y="284" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584495104517">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="518" y="284" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960@0.0.1500.960" timestamp="1584495104517" />
+    <state x="513" y="396" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog" timestamp="1584495276387">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="513" y="396" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.0.1500.960@0.0.1500.960" timestamp="1584495276387" />
+    <state x="477" y="360" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1584495331396">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="477" y="360" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1500.960@0.0.1500.960" timestamp="1584495331396" />
+    <state width="1458" height="258" key="GridCell.Tab.0.bottom" timestamp="1586238134666">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="258" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1586238134666" />
+    <state width="1458" height="258" key="GridCell.Tab.0.center" timestamp="1586238134666">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="258" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1586238134666" />
+    <state width="1458" height="258" key="GridCell.Tab.0.left" timestamp="1586238134666">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="258" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1586238134666" />
+    <state width="1458" height="258" key="GridCell.Tab.0.right" timestamp="1586238134666">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="258" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1586238134666" />
+    <state x="252" y="124" key="SettingsEditor" timestamp="1584649687197">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="252" y="124" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1584649687197" />
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1586291642749">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960@0.0.1500.960" timestamp="1586291642749" />
+    <state x="443" y="211" width="613" height="536" key="find.popup" timestamp="1585796620742">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="443" y="211" width="613" height="536" key="find.popup/0.0.1500.960@0.0.1500.960" timestamp="1585796620742" />
+    <state x="409" y="222" key="run.anything.popup" timestamp="1586209980994">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="409" y="222" key="run.anything.popup/0.0.1500.960@0.0.1500.960" timestamp="1586209980994" />
+    <state x="413" y="206" width="672" height="678" key="search.everywhere.popup" timestamp="1585866825121">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="413" y="206" width="672" height="678" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1585866825121" />
+  </component>
+</project>

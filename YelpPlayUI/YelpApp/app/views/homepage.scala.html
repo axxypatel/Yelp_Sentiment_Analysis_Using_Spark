@@ -1,0 +1,14 @@
+@(message:List[Int])
+
+<form method="get" action="readJson">
+        <input type="submit" name="Start your Application"> </input>
+</form>
+
+@if(message){
+            <h1>Total Number of Review records processed: @message(0)</h1>
+            <form method="get" method="dashbord">
+                <input type="submit" name="Dashboard"></input>
+            </form>
+
+}
+

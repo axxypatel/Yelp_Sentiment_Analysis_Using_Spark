@@ -1,0 +1,10 @@
+@(friends:List[String])
+<h1>Total Number of Review records processed: @friends.length</h1>
+@if(friends) {
+    <h2>User's Friend List</h2>
+    @for(f <- friends) {
+        <ul>
+            <li>@f</li>
+        </ul>
+    }
+}
