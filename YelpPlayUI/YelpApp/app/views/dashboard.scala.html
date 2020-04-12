@@ -1,10 +1,293 @@
-@(friends:List[String])
-<h1>Total Number of Review records processed: @friends.length</h1>
-@if(friends) {
-    <h2>User's Friend List</h2>
-    @for(f <- friends) {
-        <ul>
-            <li>@f</li>
-        </ul>
+@(business_name:String,business_score:String,positive:Map[String,String],negative:Map[String,String],friends:Map[String,String])
+<link rel="stylesheet" href=@routes.Assets.formatted("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap")>
+<link rel="stylesheet" href=@routes.Assets.formatted("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500;600;700&display=swap")>
+<link rel="stylesheet" href=@routes.Assets.formatted("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>::Sentiment Analysis of Yelp Dataset ::</title>
+
+
+        <style type="text/css">
+	* {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: none;
+        text-transform: none;
+        text-decoration: none;
     }
-}
+    h1, h2, h3, h4, h5{
+        font-weight: 500;
+    }
+    html {
+        font-size: 14px;
+        width: 100%;
+        line-height: 1.5;
+        letter-spacing: .01rem;
+
+    }
+    body {
+        background-color: #f2f2f2;
+    }
+    body, html {
+        height: 100%;
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Baloo Paaji 2', cursive;
+    }
+    header.box-card {
+        padding: 15px 20px;
+        border-radius: 0;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+        height: 50px;
+        position: relative;
+    }
+    .box-card {
+        background: #fff;
+        border-radius: .5rem;
+        box-shadow: 0 4px 25px 0 rgba(0,0,0,.1);
+        -webkit-transition: all .3s ease-in-out;
+        height: 100%;
+    }
+    .container{
+        max-width: 1270px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .row {
+        display: flex;
+    }
+    .col-6{
+        width: 50%;
+        padding: 0 15px;
+        flex: 1;
+    }
+    .col-4{
+        width: 33.33%;
+        padding: 0 15px;
+        flex: 1;
+    }
+    .box-card.wel-card {
+
+        background: #857af2;
+    }
+    .img-card{
+        display: flex;
+        justify-content: space-between;
+    }
+    .wel-text{
+        text-align: center;
+        color: #fff;
+    }
+    .wel-text h2{
+        font-size: 40px;
+    }
+    .wel-text p{
+        font-size: 30px;
+    }
+    .mb-30{
+        margin-bottom:  30px;
+    }
+    .pb-20{
+        padding-bottom: 20px;
+    }
+    .p-20{
+        padding: 20px;
+    }
+    button.btn , a.btn{
+        border: 0;
+        background: #857af2;
+        color: #fff;
+        padding: 9px 20px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,.12), 0 2px 4px 0 rgba(0,0,0,.08);
+        border-radius: 4px;
+    }
+    .business-card {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        align-items: center;
+    }
+    .rating-card {
+        display: flex;
+        justify-content: space-between;
+    }
+    .user-profile {
+        display: flex;
+        align-items: center;
+    }
+    .user-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: 1px solid #e5e5e5;
+    }
+    .user-icon{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .user-icon i{
+        font-size: 30px;
+    }
+    .review-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .star-text a i{
+        color: #f5ba01;
+
+    }
+    .star-text {
+        text-align: center;
+    }
+    .review-dis{
+        padding-top: 10px;
+    }
+    p{
+        color: #626262;
+    }
+    .review-content {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 12px;
+        margin-top: 20px;
+        border-radius: 2px;
+    }
+    hr{
+        border-color: rgba(0, 0, 0, 0.1);
+    }
+    .title{
+        padding-bottom: 10px;
+        border-bottom: 1px solid  rgba(0, 0, 0, 0.1);
+    }
+    .reviw-card{
+        height: 400px;
+        overflow: auto;
+        margin-bottom: 30px;
+    }
+    header.box-card a.btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        padding: 3px 10px;
+        font-weight: 100;
+        font-size: 16px;
+    }
+</style>
+    </head>
+    <body>
+        <header class="box-card">
+	        Sentiment Analysis of Yelp Dataset
+            <a class="btn" href="homepage.scala.html">Back</a>
+        </header>
+        <section class="content">
+            <div class="container">
+                <div class="row mb-30">
+                    <div class="col-6">
+                        <div class="box-card wel-card">
+                            <div class="img-card">
+                                <div>
+                                    <img src="img/img-1.png" style="width: 197px">
+                                </div>
+                                <div>
+                                    <img src="img/awards.jpg">
+                                </div>
+                                <div>
+                                    <img src="img/img-2.png">
+                                </div>
+                            </div>
+                            <div class="wel-text">
+                                <h2>CSYE 7200</h2>
+                                <p class="pb-20" style="color: #fff">Sentiment Analysis of Yelp Dataset </p>
+                                <span>Developed By <b>Akshay Patel(1446491), Keshav Vyas(1409174)</b></span>
+                                <span>             <b>Keshav Vyas(1409174)</b></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="box-card">
+                            <div class="business-card">
+                                <div class="business-left">
+                                    <h3>Business Name</h3>
+                                </div>
+                            </div>
+                            <div class="rating-card">
+                                <h2>Business Score: @business_score</h2>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 30px;">
+                    <div class="col-4">
+                        <div class="box-card">
+                            <div class="reviw-card p-20 ">
+                                <h2 class="title">Top Positive Review</h2>
+                                @for((k,v) <- positive){
+                                    <div class="review-content">
+                                        <div class="review-block">
+                                            <div class="user-profile">
+                                                <p class="user-img user-icon"><i class="fa fa-user"></i></p>
+                                                <div class="user-name-text">
+                                                    <h4>@k</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="review-dis"> @v</p>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="box-card">
+                            <div class="reviw-card p-20 ">
+                                <h2 class="title">Top Nagative Review</h2>
+                                @for((k,v) <- negative){
+                                    <div class="review-content">
+                                        <div class="review-block">
+                                            <div class="user-profile">
+                                                <p class="user-img user-icon"><i class="fa fa-user"></i></p>
+                                                <div class="user-name-text">
+                                                    <h4>@k</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="review-dis"> @v</p>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="box-card">
+                            <div class="reviw-card p-20 ">
+                                <h2 class="title">Top Friends Reviews</h2>
+                                @for((k,v) <- friends){
+                                    <div class="review-content">
+                                        <div class="review-block">
+                                            <div class="user-profile">
+                                                <p class="user-img user-icon"><i class="fa fa-user"></i></p>
+                                                <div class="user-name-text">
+                                                    <h4>@k</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="review-dis"> @v</p>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
