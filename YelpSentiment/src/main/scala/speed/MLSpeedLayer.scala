@@ -12,7 +12,7 @@ import util.{MLPreprocessing, SparkContextObject}
 
 
 class RealtimeProcessingSpark{
-  val spark = SparkContextObject.spark // changes done by akshay
+  val spark = SparkContextObject.spark
 
   //Set the Log file level
   spark.sparkContext.setLogLevel("WARN")

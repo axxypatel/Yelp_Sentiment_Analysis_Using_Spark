@@ -7,7 +7,7 @@ import util.{MLPreprocessing, SparkContextObject}
 class MLModelTrain {
 
   //Create a Spark session which connect to Cassandra
-  val spark = SparkContextObject.spark // changes done by akshay
+  val spark = SparkContextObject.spark
   //Implicit methods available in Scala for converting common Scala objects into DataFrames
 
   //Get Spark Context from Spark session

@@ -13,25 +13,25 @@ import util.{CassandraDB, SetupEnv, SparkContextObject, testJob}
 object yelpSentimentMain extends App{
 
   // Spark object
-    val spark = SparkContextObject.spark
+  val spark = SparkContextObject.spark
 
-    Logger.getLogger("org").setLevel(Level.OFF)
-    Logger.getLogger("akka").setLevel(Level.OFF)
+  Logger.getLogger("org").setLevel(Level.OFF)
+  Logger.getLogger("akka").setLevel(Level.OFF)
 
-    // Start Cassandra cluster
-    println("Setting environment...")
-    SetupEnv.start()
+  // Start Cassandra cluster
+  println("Setting environment...")
+  SetupEnv.start()
 
-    // Connect to Cassandra database and create database and tables
-    println("Creating database...")
-    CassandraDB.runDB()
+  // Connect to Cassandra database and create database and tables
+  println("Creating database...")
+  CassandraDB.runDB()
 
-   // Load all user, business and userNetwork in database
-   jsonFileDataLoad()
+  // Load all user, business and userNetwork in database
+  jsonFileDataLoad()
 
-    // Run Batch processing and realtime processing
-    println("Run batch processing and realtime processing...")
-    //runProcessing()
+  // Run Batch processing and realtime processing
+  println("Run batch processing and realtime processing...")
+  //runProcessing()
 
 
   def runProcessing()={
@@ -42,7 +42,10 @@ object yelpSentimentMain extends App{
     val mlActor = actorSystem.actorOf(Props(new MLSpeedLayer(new RealtimeProcessingSpark)))
 
     //Create batch actor for model retraining
-    //val MLTrainbatchActor = actorSystem.actorOf(Props(new MLBatch(new MLModelTrain)))
+    val MLTrainbatchActor = actorSystem.actorOf(Props(new MLBatch(new MLModelTrain)))
+
+    //Create batch actor for model retraining
+    val calculateAggScore = actorSystem.actorOf(Props(new BusinessScore(new CalculateScore)))
 
     //Using akka scheduler to run the batch processing periodically
     import actorSystem.dispatcher
@@ -50,7 +53,8 @@ object yelpSentimentMain extends App{
 
     actorSystem.scheduler.scheduleOnce(initialDelay,mlActor,StartProcessing)
 
-    //actorSystem.scheduler.schedule(initialDelay,Duration.create(24*60*60,"seconds"),MLTrainbatchActor,MLBatchRetraining)
+    actorSystem.scheduler.schedule(initialDelay,Duration.create(24*60*60,"seconds"),MLTrainbatchActor,MLBatchRetraining)
+    actorSystem.scheduler.schedule(initialDelay,Duration.create(24*60*60,"seconds"),calculateAggScore,CalculateBusinessScore)
 
   }
 

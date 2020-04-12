@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf1bbb8-1f40-4e0e-b2a8-3e557e743213" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,10 +26,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1ZHTXTInlEKxFduOYPWZITylBbn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -40,28 +43,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../YelpApp" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/scala/batch" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="batch" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\sem3\git-scala\YelpSentiment\src\main\scala\batch" />
       <recent name="C:\sem3\Scala\CSYE7200-master\Project\src\main\scala" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="yelpSentimentMain" type="Application" factoryName="Application" temporary="true">
@@ -96,7 +88,7 @@
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="project [file:/C:/Users/kahma/Documents/Project/]" />
+                <option name="name" value="yelpsentiment [file:/C:/sem3/git-scala/YelpSentiment/]" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
@@ -110,7 +102,6 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="3170877671963" />
         <entry key="$PROJECT_DIR$/build.sbt" value="2059231627" />
         <entry key="$PROJECT_DIR$/project/build.properties" value="1244562550" />
       </map>
@@ -176,10 +167,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="1458" height="258" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1586238134666" />
-    <state x="252" y="124" key="SettingsEditor" timestamp="1584649687197">
+    <state x="252" y="124" key="SettingsEditor" timestamp="1586714884290">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="252" y="124" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1584649687197" />
+    <state x="252" y="124" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1586714884290" />
     <state x="446" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1586291642749">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
