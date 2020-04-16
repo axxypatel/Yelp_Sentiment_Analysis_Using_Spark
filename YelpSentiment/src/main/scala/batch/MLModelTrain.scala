@@ -23,7 +23,6 @@ class MLModelTrain {
       .format("org.apache.spark.sql.cassandra")
       .options(Map( "table" -> "yelp_review", "keyspace" -> "yelp_data"))
       .load()
-      .filter(datediff(current_date(),col("timestamp")) > 0)
 
     val reviewDFFinal = new MLPreprocessing(spark,reviewDF, true).reviewPreprocess()
 
@@ -47,10 +46,6 @@ class MLModelTrain {
     println(s"NB Test set accuracy = $accuracy") // Accuracy of the model is 76%
 
     model.write.overwrite().save(AppConfig.modelPath)
-  }
-
-  def reviewFileLoad:Unit = {
-
   }
 }
 
