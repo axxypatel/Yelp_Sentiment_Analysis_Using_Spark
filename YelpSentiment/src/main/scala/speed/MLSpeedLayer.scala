@@ -48,7 +48,7 @@ class RealtimeProcessingSpark{
       .selectExpr("CAST(value as STRING)")
 
     val reviewDF = reviewDFRead.select(from_json($"value", reviewDataScheme).alias("data1")).select("data1.*")
-    val reviewPreprocessedDF = new MLPreprocessing(spark,reviewDF).reviewPreprocess()
+    val reviewPreprocessedDF = new MLPreprocessing(spark,reviewDF, false).reviewPreprocess()
     print("ML Preprocessing is done")
 
 
@@ -73,12 +73,7 @@ class RealtimeProcessingSpark{
         .save()
     }.outputMode("append").start()
 
-
-
-  query.awaitTermination()
-
-
-
+    query.awaitTermination()
   }
 }
 

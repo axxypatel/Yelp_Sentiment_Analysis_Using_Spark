@@ -2,9 +2,10 @@ package batch
 
 import akka.actor.Actor
 import org.apache.log4j.Level
+import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.expressions.Window
 import org.apache.spark.sql.functions._
-import util.{SparkContextObject}
+import util.SparkContextObject
 class CalculateScore {
 
   //Create a Spark session which connect to Cassandra
@@ -22,10 +23,20 @@ class CalculateScore {
       .options(Map("table" -> "yelp_review", "keyspace" -> "yelp_data"))
       .load()
 
-
-    import spark.implicits._
     org.apache.log4j.Logger.getLogger("org").setLevel(Level.ERROR)
 
+    val joinedDF = createDFWithScore(spark, reviewDF)
+
+    joinedDF.write.format("org.apache.spark.sql.cassandra")
+      .mode("Append")
+      .options(Map("table" -> "yelp_score", "keyspace" -> "yelp_data"))
+      .save()
+
+  }
+
+  def createDFWithScore(spark:SparkSession,reviewDF:DataFrame): DataFrame =
+  {
+    import spark.implicits._
     val windowByBusinessID = Window.partitionBy("business_id")
     val windowOrderByUseful = Window.partitionBy("business_id").orderBy(desc("useful"))
 
@@ -33,7 +44,7 @@ class CalculateScore {
       .withColumn("score", avg(col("sentiment")).over(windowByBusinessID))
       .withColumn("reviewAggregate", sum(col("sentiment")).over(windowByBusinessID))
       .withColumn("totalCount", count(col("sentiment")).over(windowByBusinessID))
-      .where(col("row") === 1).select("business_id", "score", "reviewAggregate", "totalCount")
+      .where(col("row") === 1).select("business_id", "score")
 
     scoreDF.show()
     val top5positiveDF = reviewDF.filter(col("sentiment") === 1.0).withColumn("rank_positive", rank().over(windowOrderByUseful)).where("rank_positive < 6")
@@ -51,16 +62,12 @@ class CalculateScore {
     val joinedDF = scoreDF.join(groupedByPositive, Seq("business_id"), "full_outer")
       .join(groupedByNegative, Seq("business_id"), "full_outer").orderBy(desc("score"))
 
-    joinedDF.show()
-
-    joinedDF.write.format("org.apache.spark.sql.cassandra")
-        .mode("Append")
-        .options(Map("table" -> "yelp_score", "keyspace" -> "yelp_data"))
-        .save()
+    joinedDF
 
   }
-    // df.where("city === Boston && category IN Italian").orderBy(desc("score")).take(100)
-    //left outer join of above dataframe with checkin and then order by count(checkin dates) take(10)  }
+
+  // df.where("city === Boston && category IN Italian").orderBy(desc("score")).take(100)
+  //left outer join of above dataframe with checkin and then order by count(checkin dates) take(10)  }
 }
 
 case object CalculateBusinessScore

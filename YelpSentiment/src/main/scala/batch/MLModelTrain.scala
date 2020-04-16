@@ -2,6 +2,7 @@ package batch
 
 import akka.actor.Actor
 import org.apache.spark.ml.classification.NaiveBayes
+import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
 import org.apache.spark.sql.functions._
 import util.{MLPreprocessing, SparkContextObject}
 class MLModelTrain {
@@ -22,14 +23,27 @@ class MLModelTrain {
       .load()
       .filter(datediff(current_date(),col("timestamp")) > 0)
 
-    val reviewDFFinal = new MLPreprocessing(spark,reviewDF).reviewPreprocess()
+    val reviewDFFinal = new MLPreprocessing(spark,reviewDF, true).reviewPreprocess()
+
     // Split the data into training and test sets (30% held out for testing)
-    //val Array(trainingData, testData) = reviewDFFinal.randomSplit(Array(0.7, 0.3), seed = 1234L)
+    val Array(trainingData, testData) = reviewDFFinal.randomSplit(Array(0.7, 0.3), seed = 1234L)
 
     // Train a NaiveBayes model. - Slightly better accuracy achieved than Logistic Regression
-    val model = new NaiveBayes().setModelType("multinomial").setLabelCol("sentiment").setFeaturesCol("features").fit(reviewDFFinal)
+    val model = new NaiveBayes().setModelType("multinomial").setLabelCol("sentiment").setFeaturesCol("features").fit(trainingData)
 
-    // Now we can optionally save the fitted pipeline to disk
+    // Select rows to transform.
+    val predictions = model.transform(testData)
+    predictions.show()
+
+    // Evaluate Results
+    val evaluator = new MulticlassClassificationEvaluator()
+      .setLabelCol("sentiment")
+      .setPredictionCol("prediction")
+      .setMetricName("accuracy")
+
+    val accuracy = evaluator.evaluate(predictions)
+    println(s"NB Test set accuracy = $accuracy") // Accuracy of the model is 76%
+
     model.write.overwrite().save("C:\\Users\\kahma\\Documents\\MLModels")
   }
 

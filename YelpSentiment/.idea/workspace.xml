@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf1bbb8-1f40-4e0e-b2a8-3e557e743213" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,10 +43,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/scala" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -55,21 +54,10 @@
       <recent name="batch" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\sem3\git-scala\YelpSentiment\src\test\scala" />
       <recent name="C:\sem3\git-scala\YelpSentiment\src\main\scala\batch" />
       <recent name="C:\sem3\Scala\CSYE7200-master\Project\src\main\scala" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="yelpSentimentMain" type="Application" factoryName="Application" temporary="true">
@@ -126,6 +114,7 @@
       <map>
         <entry key="$PROJECT_DIR$/../CSYE7200-master" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../CSYE7200-master/lab-99" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
       </map>
     </option>
   </component>
@@ -152,7 +141,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -163,6 +154,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="343" y="140" key="#Notifications/0.0.1500.960@0.0.1500.960" timestamp="1584495306502" />
+    <state x="343" y="140" key="#Project_Structure" timestamp="1586997091976">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="343" y="140" key="#Project_Structure/0.0.1500.960@0.0.1500.960" timestamp="1586997091976" />
     <state x="481" y="236" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1586234531528">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -179,22 +174,22 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="477" y="360" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1500.960@0.0.1500.960" timestamp="1584495331396" />
-    <state width="1458" height="258" key="GridCell.Tab.0.bottom" timestamp="1586238134666">
+    <state width="1458" height="258" key="GridCell.Tab.0.bottom" timestamp="1586997075848">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="258" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1586238134666" />
-    <state width="1458" height="258" key="GridCell.Tab.0.center" timestamp="1586238134666">
+    <state width="1458" height="258" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1586997075848" />
+    <state width="1458" height="258" key="GridCell.Tab.0.center" timestamp="1586997075848">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="258" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1586238134666" />
-    <state width="1458" height="258" key="GridCell.Tab.0.left" timestamp="1586238134666">
+    <state width="1458" height="258" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1586997075848" />
+    <state width="1458" height="258" key="GridCell.Tab.0.left" timestamp="1586997075848">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="258" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1586238134666" />
-    <state width="1458" height="258" key="GridCell.Tab.0.right" timestamp="1586238134666">
+    <state width="1458" height="258" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1586997075848" />
+    <state width="1458" height="258" key="GridCell.Tab.0.right" timestamp="1586997075848">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1458" height="258" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1586238134666" />
+    <state width="1458" height="258" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1586997075848" />
     <state x="252" y="124" key="SettingsEditor" timestamp="1586714884290">
       <screen x="0" y="0" width="1500" height="960" />
     </state>

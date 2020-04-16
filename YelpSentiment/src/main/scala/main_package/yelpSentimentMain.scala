@@ -27,7 +27,7 @@ object yelpSentimentMain extends App{
   CassandraDB.runDB()
 
   // Load all user, business and userNetwork in database
- // jsonFileDataLoad()
+  jsonFileDataLoad()
 
   // Run Batch processing and realtime processing
   println("Run batch processing and realtime processing...")
@@ -53,7 +53,7 @@ object yelpSentimentMain extends App{
 
     actorSystem.scheduler.scheduleOnce(initialDelay,mlActor,StartProcessing)
 
-   // actorSystem.scheduler.schedule(initialDelay,Duration.create(24*60*60,"seconds"),MLTrainbatchActor,MLBatchRetraining)
+    actorSystem.scheduler.schedule(initialDelay,Duration.create(24*60*60,"seconds"),MLTrainbatchActor,MLBatchRetraining)
     actorSystem.scheduler.schedule(initialDelay,Duration.create(24*60*60,"seconds"),calculateAggScore,CalculateBusinessScore)
 
   }

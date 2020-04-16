@@ -22,7 +22,7 @@ object CassandraDB {
       //Connect to the lambda_architecture keyspace
       session = cluster.connect("yelp_data")
 
-      query = "CREATE TABLE IF NOT EXISTS yelp_data.yelp_sentiment(review_id text PRIMARY KEY, user_id text, business_id text, user_loc text, review text, useful text, sentiment double);"
+      query = "CREATE TABLE IF NOT EXISTS yelp_data.yelp_sentiment(review_id text , user_id text, business_id text, user_loc text, review text, useful text, sentiment double, primary key(user_id,business_id));"
       session.execute(query)
 
       query = "CREATE TABLE IF NOT EXISTS yelp_data.user(user_id text PRIMARY KEY, name text, review_count text, yelping_since text, friends text, average_stars text);"
