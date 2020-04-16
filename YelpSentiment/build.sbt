@@ -19,7 +19,7 @@ libraryDependencies ++= Seq(
   "com.holdenkarau" %% "spark-testing-base" % "2.4.5_0.14.0" % "test",
   "MrPowers" % "spark-fast-tests" % "2.2.0_0.5.0" % "test",
   "mrpowers" % "spark-daria" % "0.35.0-s_2.11",
-  "com.typesafe.akka" %% "akka-testkit" % "2.6.4" % Test
+  "com.typesafe.akka" %% "akka-testkit" % "2.5.21" % Test
 )
 
 resolvers += "Spark Packages Repo" at "http://dl.bintray.com/spark-packages/maven"
