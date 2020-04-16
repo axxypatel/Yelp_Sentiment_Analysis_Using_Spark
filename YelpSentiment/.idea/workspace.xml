@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cf1bbb8-1f40-4e0e-b2a8-3e557e743213" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +44,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/scala/batch" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -54,6 +58,18 @@
       <recent name="C:\sem3\git-scala\YelpSentiment\src\main\scala\batch" />
       <recent name="C:\sem3\Scala\CSYE7200-master\Project\src\main\scala" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="yelpSentimentMain" type="Application" factoryName="Application" temporary="true">
@@ -88,7 +104,7 @@
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="yelpsentiment [file:/C:/sem3/git-scala/YelpSentiment/]" />
+                <option name="name" value="yelpsentiment [file:/C:/Users/kahma/Documents/CSYE7200_Project/CSYE7200_Project/YelpSentiment/]" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
@@ -124,11 +140,23 @@
       <option name="presentableId" value="Default" />
       <updated>1584495058168</updated>
       <workItem from="1586311168061" duration="62788000" />
+      <workItem from="1586720481910" duration="5085000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="343" y="140" key="#Notifications" timestamp="1584495306502">
