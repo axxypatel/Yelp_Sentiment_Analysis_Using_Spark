@@ -7,6 +7,7 @@ import scala.io._
 import java.util.Properties
 
 import com.datastax.driver.core.{BoundStatement, Cluster, ResultSet, Row, Session}
+import controllers.AppConfig.AppConfig
 import org.apache.kafka.clients.producer._
 import org.neo4j.driver.{AuthTokens, GraphDatabase}
 
@@ -34,8 +35,8 @@ class homeController  @Inject()(cc: ControllerComponents) extends AbstractContro
       result
     }
     def initializeKafkaStream = Action {
-        val topic1 = "ReviewTopic"
-        val reviewFilePath = "C:\\Users\\kahma\\Documents\\review_test.json"
+        val topic1 = AppConfig.reviewTopic
+        val reviewFilePath = AppConfig.reviewFile
         val cntList:List[Int] = List()
 
         import views._
