@@ -16,7 +16,7 @@ class CalculateScore {
   val sparkContext = spark.sparkContext
 
   def CalScore: Unit = {
-
+    println("(Re)Calculate Scores")
     //Read yelp_sentiment table using DataFrame
     val reviewDF = spark.read
       .format("org.apache.spark.sql.cassandra")

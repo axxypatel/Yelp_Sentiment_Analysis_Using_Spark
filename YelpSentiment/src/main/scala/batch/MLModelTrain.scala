@@ -15,7 +15,7 @@ class MLModelTrain {
   val sparkContext = spark.sparkContext
 
   def mlRetraining: Unit ={
-
+    println("Model Retraining Started")
     //Read yelp_sentiment table using DataFrame
     val reviewDF = spark.read
       .format("org.apache.spark.sql.cassandra")

@@ -1,5 +1,8 @@
 package main_package
 
+import java.text.SimpleDateFormat
+import java.util.Calendar
+
 import akka.actor.{ActorSystem, Props}
 import batch._
 import speed._
@@ -49,12 +52,18 @@ object yelpSentimentMain extends App{
 
     //Using akka scheduler to run the batch processing periodically
     import actorSystem.dispatcher
-    val initialDelay = 100 milliseconds
+    val initialSpeedDelay = 100 milliseconds
+    val now = Calendar.getInstance().getTime()
+    val hourFormat = new SimpleDateFormat("hh")
+    val currentHour = hourFormat.format(now)
+    val initialBatchDelay = 24 - currentHour.toInt + 6
 
-    actorSystem.scheduler.scheduleOnce(initialDelay,mlActor,StartProcessing)
-
-    actorSystem.scheduler.schedule(initialDelay,Duration.create(24*60*60,"seconds"),MLTrainbatchActor,MLBatchRetraining)
-    actorSystem.scheduler.schedule(initialDelay,Duration.create(24*60*60,"seconds"),calculateAggScore,CalculateBusinessScore)
+    println(initialSpeedDelay)
+    println("initialBatchDelay")
+    println(initialBatchDelay)
+    actorSystem.scheduler.scheduleOnce(initialSpeedDelay,mlActor,StartProcessing)
+    actorSystem.scheduler.schedule(Duration.create(initialBatchDelay,"seconds"),Duration.create(24*60*60,"seconds"),MLTrainbatchActor,MLBatchRetraining)
+    actorSystem.scheduler.schedule(Duration.create(initialBatchDelay,"seconds"),Duration.create(24*60*60,"seconds"),calculateAggScore,CalculateBusinessScore)
 
   }
 

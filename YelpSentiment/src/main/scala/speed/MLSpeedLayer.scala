@@ -38,7 +38,7 @@ class RealtimeProcessingSpark{
   )
 
   def realtimeAnalysis(): Unit = {
-
+    println("Realtime Sentiment Analysis Started")
     //Subscribe Spark the defined Kafka topic
     val reviewDFRead = spark.readStream
       .format("kafka")
