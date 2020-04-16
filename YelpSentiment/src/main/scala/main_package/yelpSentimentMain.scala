@@ -62,8 +62,8 @@ object yelpSentimentMain extends App{
     println("initialBatchDelay")
     println(initialBatchDelay)
     actorSystem.scheduler.scheduleOnce(initialSpeedDelay,mlActor,StartProcessing)
-    actorSystem.scheduler.schedule(Duration.create(initialBatchDelay,"seconds"),Duration.create(24*60*60,"seconds"),MLTrainbatchActor,MLBatchRetraining)
-    actorSystem.scheduler.schedule(Duration.create(initialBatchDelay,"seconds"),Duration.create(24*60*60,"seconds"),calculateAggScore,CalculateBusinessScore)
+    actorSystem.scheduler.schedule(Duration.create(initialBatchDelay,"hours"),Duration.create(24*60*60,"seconds"),MLTrainbatchActor,MLBatchRetraining)
+    actorSystem.scheduler.schedule(Duration.create(initialBatchDelay,"hours"),Duration.create(24*60*60,"seconds"),calculateAggScore,CalculateBusinessScore)
 
   }
 
