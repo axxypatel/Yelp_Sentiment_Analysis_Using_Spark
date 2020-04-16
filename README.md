@@ -61,22 +61,26 @@ Run scala/main_package -> yelpSentimentMain.scala
 
 ## Run Play UI Project
 
-Scala based Play UI framework is used in this project to trigger kafka streams and send user review data over kafka stream which can be consumed by Scala project mention in above section for sentiment analysis. UI buid in play framwork also shows results for all the use cased mention in this project.
+Scala based Play UI framework is used in this project to trigger Kafka streams and send user review data over Kafka stream which can be consumed by Scala project mention in above section for sentiment analysis. UI build in play framework also shows results for all the use cased mention in this project.
 
 Use Cases:
 1. User selects a business id i.e. Restaurant, Home Service and gets sentiment analysis of that business.
 2. User selects a category and Location and gets top trending businesses.
-3. User choose User id and Business Id and top 5 positive and negative reviews along with user's friend's review who visited that place before along with thier review.
+3. User choose User id and Business Id and top 5 positive and negative reviews along with user's friend's review who visited that place before along with their review.
 
 Data:
-For ingesting user review data: Replace directory for json file in scala/main_package/yelpSentimentMain.scala
+For ingesting user review data: Replace directory path for json file in app/controllers/homeController.scala
 
 Open Itellij and Run Scala Play framework which open open below showened page:
+![](usecase1.PNG)
 
 
 Use Case 1 & 3:
+![](usecase3.PNG)
+
 
 Use Case 2:
+![](usecase2.PNG)
 
 
 
