@@ -43,18 +43,18 @@ Prerequisites:
 Cassandra: version 3.11 https://www.apache.org/dyn/closer.lua/cassandra/3.11.6/
 Zookeeper: https://zookeeper.apache.org/releases.html#download
 
-Replace Data Directory of Cassandra and Zookeeper in scala/util/SetupEnv.scala
+Replace Data Directory of Cassandra and Zookeeper in resources/application.conf
 
 Data: https://www.yelp.com/dataset
 
-For ingesting business, user and checkin data: Replace directory for json files in scala/main_package/yelpSentimentMain.scala
+For ingesting business, user and checkin data: Replace directory for json files in resources/application.conf
 
 Model saving:
-Replace directory of trained model in speed/MLSpeedLayer.scala which will essentially use the model to predict sentiment
+Replace directory of trained model in resources/application.conf which will essentially use the model to predict sentiment
 in realtime streaming data 
 
 Model Retraining: 
-Replace directory to save re-trained model in batch/MLModelTrain.scala
+Replace directory to save re-trained model in resources/application.conf
 
 To Run Scala Application:
 Run scala/main_package -> yelpSentimentMain.scala
