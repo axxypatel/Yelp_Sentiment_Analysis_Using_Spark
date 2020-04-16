@@ -25,7 +25,7 @@ Can you imagine manually sorting through millions customer reviews, ratings, sug
 
 Speed Layer: Speed Layer is responsible for continuously processing review data from Kafka stream. Spark structured streaming reads the kafka stream data, preprocess it for machine learning model, and classify the review text as positive or negative sentiment. Final results of speed layer loads into Cassandra continuously in append mode.
 
-Batch Layer: Batch layer loads user, business and check-in data into Cassandra along with loading user friends network graph into neo4j graph database. Batch layer also retrain naive Bayes classification algorithm  as schedules in akka scheduler. Batch Layer also facilitate aggregation of user review and its important details about sentiment and loads into Cassandra.
+Batch Layer: Batch layer retrains Naive Bayes Model periodically as scheduled by Akka Scheduler. Batch layer creates user friends network graph into neo4j graph database. Batch Layer also facilitates aggregation of user review and its important details about sentiment and loads into Cassandra.
 
 
 # Project Setup
