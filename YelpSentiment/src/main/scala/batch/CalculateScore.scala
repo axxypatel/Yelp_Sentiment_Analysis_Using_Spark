@@ -21,7 +21,7 @@ class CalculateScore {
     //Read yelp_sentiment table using DataFrame
     val reviewDF = spark.read
       .format("org.apache.spark.sql.cassandra")
-      .options(Map("table" -> "yelp_review", "keyspace" -> "yelp_data"))
+      .options(Map("table" -> "yelp_sentiment", "keyspace" -> "yelp_data"))
       .load()
 
     org.apache.log4j.Logger.getLogger("org").setLevel(Level.ERROR)
