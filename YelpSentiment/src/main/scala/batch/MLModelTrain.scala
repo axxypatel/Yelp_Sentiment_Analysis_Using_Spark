@@ -1,4 +1,12 @@
 package batch
+
+import akka.actor.Actor
+import main_package.AppConfig
+import org.apache.spark.ml.classification.NaiveBayes
+import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
+import org.apache.spark.sql.functions._
+import util.{MLPreprocessing, SparkContextObject}
+
 class MLModelTrain {
 
   //Create a Spark session which connect to Cassandra
