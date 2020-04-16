@@ -1,9 +1,5 @@
 package util
 
-import java.io.{BufferedReader, File, InputStreamReader}
-
-import akka.actor.{Actor, ActorSystem, Props}
-
 case object StartZookeeper
 case object StartKafkaServer
 case object StartCassandra
@@ -12,10 +8,10 @@ case object StartTopic
 class SetupActor extends Actor{
   //val kafkaDir="C:\\kafka"
   //val cassandraDir="C:\\cassandra\\apache-cassandra-3.11.6"
-  val zookeeperCmd="C:\\kafka\\bin\\windows\\zookeeper-server-start.bat C:\\kafka\\config\\zookeeper.properties"
-  val serverCmd="C:\\kafka\\bin\\windows\\kafka-server-start.bat C:\\kafka\\config\\server.properties"
+  val zookeeperCmd=AppConfig.zooKeeperPath
+  val serverCmd=AppConfig.serverPath
   //val reviewTopic = ".\\bin\\windows\\kafka-console-producer.bat --broker-list localhost:9092 --topic TipTopic"
-  val cassandraCmd="C:\\cassandra\\apache_cassandra\\bin\\cassandra.bat"
+  val cassandraCmd= AppConfig.cassandraPath
   //val kafkaCassandraCmd="bin/connect-standalone.sh config/connect-standalone.properties config/cassandra-sink.properties"
 
   //Implement cmdExecuter method to execute a command string

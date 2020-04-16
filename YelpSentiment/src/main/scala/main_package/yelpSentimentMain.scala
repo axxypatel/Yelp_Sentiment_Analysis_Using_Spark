@@ -69,16 +69,15 @@ object yelpSentimentMain extends App{
 
   def jsonFileDataLoad():Unit={
     val user = UserDataLoad
-    user.loadData("C:\\Users\\kahma\\Documents\\yelp_academic_dataset_user.json")
+    user.loadData(AppConfig.userFile)
 
     val business = BusinessDataLoad
-    business.loadData("C:\\Users\\kahma\\Documents\\yelp_academic_dataset_business.json")
+    business.loadData(AppConfig.businessFile)
 
     val checkin = CheckinDataLoad
-    checkin.loadData("C:\\Users\\kahma\\Documents\\yelp_academic_dataset_checkin.json")
+    checkin.loadData(AppConfig.checkinFile)
 
     val userGraph = UserNetworkLoad
     userGraph.prepareUserGraph()
-
   }
 }

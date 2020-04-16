@@ -1,15 +1,5 @@
 package speed
 
-import akka.actor.Actor
-import org.apache.spark.ml.PipelineModel
-import org.apache.spark.sql.types.{DateType, LongType, StringType, StructField, StructType}
-import org.apache.spark.sql.functions.{desc, from_json, lower}
-import org.apache.spark.sql.functions._
-import org.apache.spark.ml.classification.NaiveBayesModel
-import org.apache.spark.ml.feature.{CountVectorizer, CountVectorizerModel, IDF}
-import org.apache.spark.sql.DataFrame
-import util.{MLPreprocessing, SparkContextObject}
-
 
 class RealtimeProcessingSpark{
   val spark = SparkContextObject.spark
@@ -53,7 +43,7 @@ class RealtimeProcessingSpark{
 
 
 
-    val model = NaiveBayesModel.load("C:\\Users\\kahma\\Documents\\MLModels")
+    val model = NaiveBayesModel.load(AppConfig.modelPath)
 
     val toBeStoredinCassandra = model.transform(reviewPreprocessedDF)
     toBeStoredinCassandra.printSchema()

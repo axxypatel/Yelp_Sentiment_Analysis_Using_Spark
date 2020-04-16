@@ -1,10 +1,4 @@
 package batch
-
-import akka.actor.Actor
-import org.apache.spark.ml.classification.NaiveBayes
-import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
-import org.apache.spark.sql.functions._
-import util.{MLPreprocessing, SparkContextObject}
 class MLModelTrain {
 
   //Create a Spark session which connect to Cassandra
@@ -44,7 +38,7 @@ class MLModelTrain {
     val accuracy = evaluator.evaluate(predictions)
     println(s"NB Test set accuracy = $accuracy") // Accuracy of the model is 76%
 
-    model.write.overwrite().save("C:\\Users\\kahma\\Documents\\MLModels")
+    model.write.overwrite().save(AppConfig.modelPath)
   }
 
   def reviewFileLoad:Unit = {

@@ -8,8 +8,13 @@ import scala.concurrent.duration.Duration
 object AppConfig {
   val config = ConfigFactory.load()
 
-  val kafkaTopic=config.getString("kafka.topic")
+  val modelPath = config.getString("model.modelPath")
 
-  val reviewDuration=Duration.fromNanos(config.getDuration("batchProcessing.reviewDuration").toNanos)
-  val batchInterval=Duration.fromNanos(config.getDuration("batchProcessing.batchInterval").toNanos)
+  val zooKeeperPath = config.getString("setupenv.zooKeeperPath")
+  val serverPath = config.getString("setupenv.serverPath")
+  val cassandraPath = config.getString("setupenv.cassandraPath")
+
+  val businessFile = config.getString("yelpdata.businessFile")
+  val userFile = config.getString("yelpdata.userFile")
+  val checkinFile = config.getString("yelpdata.checkinFile")
 }
