@@ -69,7 +69,7 @@ Use Cases:
 3. User choose User id and Business Id and top 5 positive and negative reviews along with user's friend's review who visited that place before along with their review.
 
 Data:
-For ingesting user review data: Replace directory path for json file in app/controllers/homeController.scala
+For ingesting user review data: Replace directory path for json file in conf/application.conf and add topic name
 
 Open Itellij and Run Scala Play framework which open open below showened page:
 ![](usecase1.PNG)
