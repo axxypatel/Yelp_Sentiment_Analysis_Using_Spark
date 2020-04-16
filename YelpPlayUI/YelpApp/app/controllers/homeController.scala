@@ -26,6 +26,13 @@ class homeController  @Inject()(cc: ControllerComponents) extends AbstractContro
         Ok(views.html.home(Nil))
     }
 
+    def time[R](block: => R): R = {
+      val t0 = System.nanoTime() / 1000000000
+      val result = block    // call-by-name
+      val t1 = System.nanoTime()  / 1000000000
+      println("Elapsed time: " + (t1 - t0)  + "sec")
+      result
+    }
     def initializeKafkaStream = Action {
         val topic1 = "ReviewTopic"
         val reviewFilePath = "C:\\Users\\kahma\\Documents\\review_test.json"
@@ -34,7 +41,8 @@ class homeController  @Inject()(cc: ControllerComponents) extends AbstractContro
         import views._
 
         // call function to read review json file data and return record Count
-        val reviewFileCnt:Int = sendKafkaMessages(topic1,reviewFilePath)
+
+        val reviewFileCnt:Int = time{sendKafkaMessages(topic1,reviewFilePath)}
         //val reviewFileCnt:Int = 100
 
         Ok(views.html.home(reviewFileCnt :: cntList))
@@ -58,7 +66,7 @@ class homeController  @Inject()(cc: ControllerComponents) extends AbstractContro
             }
         }
         producer.close()
-        return cnt
+        cnt
     }
 
     def loadBusinessData(user_id:String, business_name:String) = Action {
@@ -92,7 +100,7 @@ class homeController  @Inject()(cc: ControllerComponents) extends AbstractContro
         //val negative = (1 to top5negative.size).zip(top5negative).toMap
         //val friends = (1 to top5positive.size).zip(top5positive).toMap //Attention: load the user friend's network here
 
-      val friends = getUserGraph(user_id,business_name)
+      val friends = time{getUserGraph(user_id,business_name)}
       Ok(views.html.business(business_name,obj.score,obj.top5positive,obj.top5negative,friends))
     }
 
@@ -114,7 +122,7 @@ class homeController  @Inject()(cc: ControllerComponents) extends AbstractContro
         }
         session.close()
         cluster.close()
-        return friendList.toList
+        friendList.toList
     }
 
     def getUserGraph(user_id:String,business_name:String):List[String] ={
@@ -135,7 +143,7 @@ class homeController  @Inject()(cc: ControllerComponents) extends AbstractContro
         val finalString = friendString.replace(",)",")").replace(" ","")
         session.close()
         driver.close()
-        return getFriendReviews(finalString,business_name)
+        getFriendReviews(finalString,business_name)
     }
 
     def loadTrendingData(category:String, city:String) = Action{

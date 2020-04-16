@@ -21,6 +21,12 @@
     h1, h2, h3, h4, h5{
         font-weight: 500;
     }
+    input{
+        padding: 9px 10px;
+        border-radius: 5px;
+        border: 1px solid #bbb7b7;
+        width: 100%;
+    }
     html {
         font-size: 14px;
         width: 100%;
@@ -205,7 +211,7 @@
                             <div class="wel-text">
                                 <h2>CSYE 7200</h2>
                                 <p class="pb-20" style="color: #fff">Sentiment Analysis of Yelp Dataset </p>
-                                <span>Developed By <b>Akshay Patel(1446491), Keshav Vyas(1409174)</b></span></div>
+                                <span>Developed By <b>Akshay Patel(1446491), Keshav Vyas(1409174)</b></span>
                             </div>
                         </div>
                     </div>
@@ -213,8 +219,8 @@
                         <div class="box-card">
                             <div class="business-card">
                                 <div class="business-left">
-                                    <h3>Click on Submit button to start application</h3>
-                                    <h5>It Will Read Review Json File And Send Every Json Object As Kafka Message</h5>
+                                    <h2>Click on Submit button to start application</h2>
+                                    <h4>It Will Read Review Json File And Send Every Json Object As Kafka Message</h4>
                                 </div>
                                 <div class="business-right">
                                     <form method="get" action="initializeKafkaStream">
@@ -225,8 +231,8 @@
                                 </div>
                             </div>
                             @if(! message.isEmpty) {
-                                <div class="rating-card">
-                                    <h1>Total Number of Review records processed: @message(0)</h1>
+                                <div class="business-left">
+                                    <h2>Total Number of Review records processed: @message(0)</h2>
                                 </div>
                             }
                         </div>
@@ -314,7 +320,7 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
         </section>
     </body>
 </html>
