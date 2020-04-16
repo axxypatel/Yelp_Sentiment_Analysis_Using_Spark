@@ -20,9 +20,9 @@ class MLPreprocessing(spark:SparkSession,reviewDF:DataFrame, modelTraining: Bool
                                   .when(col("stars") === "1.0" || col("stars") === "2.0", 0))
 
 
-                        return reviewDFSentiment
+                         reviewDFSentiment
                 }
-                return reviewDF
+                 reviewDF
         }
 
         def reviewPreprocess():DataFrame = {
@@ -62,6 +62,6 @@ class MLPreprocessing(spark:SparkSession,reviewDF:DataFrame, modelTraining: Bool
                 val reviewDFHashed = hashingTF.transform (reviewDFNGrams)
                 // alternatively, CountVectorizer can also be used to get term frequency vectors
                 reviewDFHashed.printSchema ()
-                return reviewDFHashed
+                reviewDFHashed
         }
 }
