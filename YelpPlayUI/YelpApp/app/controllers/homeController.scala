@@ -34,14 +34,13 @@ class homeController  @Inject()(cc: ControllerComponents) extends AbstractContro
       result
     }
     def initializeKafkaStream = Action {
-        val topic1 = "ReviewTopic"
-        val reviewFilePath = "C:\\Users\\kahma\\Documents\\review_test.json"
+        val topic1 = AppConfig.reviewTopic
+        val reviewFilePath = AppConfig.reviewFile
         val cntList:List[Int] = List()
 
         import views._
 
         // call function to read review json file data and return record Count
-
         val reviewFileCnt:Int = time{sendKafkaMessages(topic1,reviewFilePath)}
         //val reviewFileCnt:Int = 100
 
@@ -82,18 +81,16 @@ class homeController  @Inject()(cc: ControllerComponents) extends AbstractContro
          val bound:BoundStatement = prepared.bind().setString("business_id", business_name)
 
         val row = session.execute(bound).one()
-
 //        while (rs.iterator().hasNext) {
 //            val row = rs.iterator().next()
 //            val business_score = row.getString("score")
 //            val top5positive = row.getSet("top5positive",classOf[String]).asScala.toList
-//            val top5negative = row.getSet("top5negative",classOf[String]).asScala.toList
-//        }
+//            val top5negative = row.getSet("top5negative",classOf[String]).asScala.toList/        }
 
-                val obj = Business(
-                    row.getDouble("score"),
-                    row.getSet("top5positive", classOf[String]).asScala.toList,
-                    row.getSet("top5negative", classOf[String]).asScala.toList)
+        val obj = Business(
+            row.getDouble("score"),
+            row.getSet("top5positive", classOf[String]).asScala.toList,
+            row.getSet("top5negative", classOf[String]).asScala.toList)
 
 
        // val positive = (1 to top5positive).zip(top5positive).toMap
@@ -115,10 +112,7 @@ class homeController  @Inject()(cc: ControllerComponents) extends AbstractContro
         while(results.iterator().hasNext()){
             var row = results.iterator().next()
             println(row.getString("review"))
-          //if(row.getString("user_id").contains(friends)){
             friendList+= row.getString("review")
-          //}
-            //friendList+= row.getString("review")
         }
         session.close()
         cluster.close()
