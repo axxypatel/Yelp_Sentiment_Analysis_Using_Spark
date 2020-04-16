@@ -1,6 +1,9 @@
 import batch.CalculateScore
+
+import com.github.mrpowers.spark.fast.tests.DataFrameComparer
 import org.apache.spark.sql.Row
 import org.apache.spark.sql.types._
+import org.scalatest._
 
 class CalculateScoreSpec extends FunSpec with SparkSessionTestWrapper
   with DataFrameComparer{
